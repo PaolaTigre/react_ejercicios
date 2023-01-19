@@ -1,0 +1,22 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+#Configuracion de spring
+spring:
+  #Configuracion de migracion
+  flyway:
+    enabled: true
+    baselineVersion: 1
+    locations:
+      classpath: db/migration
+    sqlMigrationSuffixes: .sql
+    baselineOnMigrate: true
+    sqlMigrationPrefix: V
+    schemas: public
+
+  datasource:
+    url: jdbc:postgresql://peanut.db.elephantsql.com/xipypnlv?socketTimeout=3
+    username: xipypnlv
+    password: Wl0XXVaZfBy6LQIr-B5GT_okb9igPp_0
+    driverClassName: org.postgresql.Driver
